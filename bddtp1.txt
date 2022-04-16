@@ -1,0 +1,49 @@
+bdd tp1 en workbench
+
+		use tp1;
+create table usuario(
+usuario varchar(255) primary Key, 
+clave varchar(255) not null,
+rol varchar(255) not null
+
+); 
+use tp1;
+insert into usuario VALUES(
+'admin', '1234','administrador'
+);
+
+use tp1;
+insert into usuario VALUES(
+'gma', 'vamos', 'administrador'); 
+insert into usuario VALUES(
+'cami', 'vamos', 'analista'); 
+insert into usuario VALUES(
+'juan', 'vamos12', 'analista'); 
+insert into usuario VALUES(
+'pedro', 'vamos1', 'administrador'); 
+
+select * from tp1.usuario;
+use tp1;
+select count(DISTINCT usuario) from usuario;
+
+		
+
+		const formulario = document.querySelector('.card');
+//formulario.addEventListener('click', validarFormulario); 
+ //function validarFormulario(e){
+    formulario.addEventListener('click', e=>{  
+    console.log('buscando..');
+    console.log(e.target);  
+}); 
+
+
+	//funciona
+	const formulario = document.querySelector('.formulario');
+
+    formulario.addEventListener('click', e=>{  
+    console.log('buscando..');
+    console.log(e.target);  
+}); 
+
+ 
+

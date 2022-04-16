@@ -1,0 +1,85 @@
+		
+	use tpgym;
+create table usuario(
+Cod_usu int auto_increment,
+usuario varchar(255) primary Key, 
+clave varchar(255) not null,
+rol varchar(255) not null,
+Nombre varchar(25) not null,
+Apellido  varchar(255) not null,
+DNI  INTEGER(30) not null unique,
+Direccion varchar(255) ,
+Ciudad  varchar(255) not null,
+Telefono integer(30) not null,
+Email  varchar(255) not null,
+Activo boolean 
+); 
+
+ use tpgym;
+create table inscribir(
+Cod_inscrip int primary key auto_increment,
+fecha_insc datetime not null,
+pago varchar(15), 
+Cod_usu int(50),
+Cod_actividad int(50),
+Cod_promo int, 
+foreign key(Cod_usu) References usuario(usuario),
+foreign key(Cod_actividad) References actividad(Nombre),
+foreign key(Cod_promo) References promocion(Nombre)
+);
+ use tpgym;
+create table actividad(
+Cod_activ int auto_increment,
+Nombre varchar(50) primary key ,
+Modalidad_semanal char (50),
+f_inicio date,
+f_acaba date,
+Hora_inicio varchar(10),
+Hora_fin varchar(10),
+Cod_entrenador int(50), 
+turno varchar(10),
+precio varchar(20),
+foreign key(Cod_entrenador) references entrenador(usuario)
+);
+ use tpgym;
+create table promocion(
+cod_promo int  auto_increment,
+Nombre char (50) primary key,
+Descuento char(25),
+activ int(30),
+foreign key(activ) references actividad(Nombre)
+
+);
+
+ use tpgym;
+create table entrenador(
+Cod_entre int auto_increment,
+usuario varchar(255) primary Key, 
+clave varchar(255) not null,
+rol varchar(255) not null,
+Nombre varchar(25) not null,
+Apellido  varchar(255) not null,
+DNI  INTEGER(30) not null unique,
+Direccion varchar(255) ,
+Ciudad  varchar(255) not null,
+Telefono int (30) not null,
+Email  varchar(255) not null,
+Activo boolean 
+); 
+
+
+
+use tpgym;
+insert into usuario VALUES(
+'admin', '1234','administrador'
+);
+
+use tpgym;
+insert into usuario VALUES(
+'gma', 'vamos', 'administrador'); 
+insert into usuario VALUES(
+'cami', 'vamos', 'analista'); 
+insert into usuario VALUES(
+'juan', 'vamos12', 'analista'); 
+insert into usuario VALUES(
+'pedro', 'vamos1', 'administrador'); 

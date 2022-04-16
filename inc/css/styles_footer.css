@@ -1,0 +1,18 @@
+body{
+    margin: 0%;
+    padding: auto;
+  
+} 
+   /*footer  */
+.container-fluid {
+   position:absolute;
+}
+.container-fluid footer{
+   position: relative;   
+   
+}
+
+.container-fluid footer ul li a{ 
+   color: white;
+   margin-top: 3%;
+}
